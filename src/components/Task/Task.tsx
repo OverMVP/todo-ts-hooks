@@ -60,6 +60,10 @@ const Task: FC<TaskProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time])
 
+  useEffect(() => {
+    return () => setTime(0)
+  }, [completed])
+
   function onChangeInput(e: ChangeEvent<HTMLInputElement>): void {
     e.preventDefault()
     const text = e.target.value
